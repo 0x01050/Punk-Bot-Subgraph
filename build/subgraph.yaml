@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: PunkBodies
@@ -16,11 +16,11 @@ dataSources:
         - Transfer
       abis:
         - name: PunkBodies
-          file: ./abis/PunkBodies.json
+          file: PunkBodies\abis\PunkBodies.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handlePunkBodiesTransfer
-      file: ./src/mapping.ts
+      file: PunkBodies\PunkBodies.wasm
   - kind: ethereum/contract
     name: Punkster
     network: mainnet
@@ -35,8 +35,8 @@ dataSources:
         - Transfer
       abis:
         - name: Punkster
-          file: ./abis/Punkster.json
+          file: Punkster\abis\Punkster.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handlePunksterTransfer
-      file: ./src/mapping.ts
+      file: PunkBodies\PunkBodies.wasm
